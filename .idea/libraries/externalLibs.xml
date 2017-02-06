@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="externalLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/externalLibs/jna-4.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/la4j-0.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/objenesis-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/fst-2.47-onejar.jar!/" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/Jeigen-onefat.jar!/" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/fst-2.47.jar!/" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/jackson-core-2.5.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javassist-3.19.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/Jama-1.0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

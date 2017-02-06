@@ -1,0 +1,66 @@
+Manifest-Version: 1.0
+Class-Path: neo4j-security-3.1.0.jar commons-compress-1.12.jar neo4j-c
+ ollections-3.1.0.jar neo4j-primitive-collections-3.1.0.jar commons-be
+ anutils-1.8.3.jar neo4j-graph-matching-3.1.0.jar neo4j-common-3.1.0.j
+ ar jetty-servlet-9.2.9.v20150224.jar jline-2.12.jar neo4j-graph-algo-
+ 3.1.0.jar javax.servlet-api-3.1.0.jar jetty-security-9.2.9.v20150224.
+ jar scala-library-2.11.8.jar neo4j-resource-3.1.0.jar jersey-server-1
+ .19.jar neo4j-bolt-3.1.0.jar neo4j-shell-3.1.0.jar lucene-queryparser
+ -5.5.0.jar lucene-core-5.5.0.jar lucene-codecs-5.5.0.jar neo4j-udc-3.
+ 1.0.jar neo4j-jmx-3.1.0.jar neo4j-lucene-index-3.1.0.jar neo4j-cypher
+ -frontend-3.1-3.1.0.jar neo4j-graphdb-api-3.1.0.jar mimepull-1.9.3.ja
+ r jetty-http-9.2.9.v20150224.jar jetty-webapp-9.2.9.v20150224.jar jer
+ sey-servlet-1.19.jar jersey-multipart-1.19.jar lucene-analyzers-commo
+ n-5.5.0.jar neo4j-lucene-upgrade-3.1.0.jar neo4j-cypher-3.1.0.jar neo
+ 4j-cypher-compiler-2.3-2.3.7.jar neo4j-csv-3.1.0.jar neo4j-kernel-3.1
+ .0.jar neo4j-logging-3.1.0.jar jackson-mapper-asl-1.9.13.jar asm-5.0.
+ 4.jar neo4j-server-3.1.0.jar neo4j-import-tool-3.1.0.jar jetty-xml-9.
+ 2.9.v20150224.jar commons-io-2.4.jar jetty-util-9.2.9.v20150224.jar n
+ eo4j-browser-2.0.0-M10.jar neo4j-command-line-3.1.0.jar bcprov-jdk15o
+ n-1.53.jar opencsv-2.3.jar commons-logging-1.1.1.jar jackson-core-asl
+ -1.9.13.jar commons-lang-2.6.jar jackson-jaxrs-1.9.13.jar neo4j-cyphe
+ r-compiler-3.0-3.0.7.jar parboiled-scala_2.11-1.1.7.jar neo4j-cypher-
+ frontend-3.0-3.0.7.jar commons-configuration-1.10.jar neo4j-unsafe-3.
+ 1.0.jar caffeine-2.3.3.jar parboiled-core-1.1.7.jar scala-reflect-2.1
+ 1.8.jar concurrentlinkedhashmap-lru-1.4.2.jar neo4j-io-3.1.0.jar jett
+ y-server-9.2.9.v20150224.jar neo4j-consistency-check-3.1.0.jar common
+ s-lang3-3.3.2.jar jetty-io-9.2.9.v20150224.jar neo4j-codegen-3.1.0.ja
+ r server-api-3.1.0.jar jersey-core-1.19.jar neo4j-dbms-3.1.0.jar neo4
+ j-cypher-compiler-3.1-3.1.0.jar bcpkix-jdk15on-1.53.jar netty-all-4.1
+ .6.Final.jar commons-digester-2.1.jar neo4j-cypher-frontend-2.3-2.3.7
+ .jar rhino-1.7R4.jar jsr311-api-1.1.2.r612.jar server-api-3.1.0.jar j
+ ackson-core-asl-1.9.13.jar jsr311-api-1.1.2.r612.jar neo4j-consistenc
+ y-check-3.1.0.jar neo4j-graphdb-api-3.1.0.jar lucene-queryparser-5.5.
+ 0.jar neo4j-lucene-index-3.1.0.jar neo4j-udc-3.1.0.jar neo4j-resource
+ -3.1.0.jar jetty-http-9.2.9.v20150224.jar Jeigen-onefat.jar commons-l
+ ang3-3.3.2.jar neo4j-lucene-upgrade-3.1.0.jar jetty-server-9.2.9.v201
+ 50224.jar jetty-io-9.2.9.v20150224.jar jline-2.12.jar neo4j-import-to
+ ol-3.1.0.jar jetty-util-9.2.9.v20150224.jar bcpkix-jdk15on-1.53.jar n
+ eo4j-csv-3.1.0.jar neo4j-command-line-3.1.0.jar commons-compress-1.12
+ .jar neo4j-unsafe-3.1.0.jar jersey-multipart-1.19.jar bcprov-jdk15on-
+ 1.53.jar jetty-security-9.2.9.v20150224.jar commons-lang-2.6.jar java
+ x.servlet-api-3.1.0.jar neo4j-graph-algo-3.1.0.jar parboiled-scala_2.
+ 11-1.1.7.jar neo4j-cypher-frontend-3.1-3.1.0.jar commons-configuratio
+ n-1.10.jar neo4j-cypher-compiler-2.3-2.3.7.jar asm-5.0.4.jar mimepull
+ -1.9.3.jar neo4j-bolt-3.1.0.jar jackson-jaxrs-1.9.13.jar jetty-webapp
+ -9.2.9.v20150224.jar lucene-analyzers-common-5.5.0.jar neo4j-cypher-f
+ rontend-2.3-2.3.7.jar neo4j-cypher-compiler-3.1-3.1.0.jar neo4j-cyphe
+ r-3.1.0.jar jetty-xml-9.2.9.v20150224.jar neo4j-codegen-3.1.0.jar neo
+ 4j-jmx-3.1.0.jar commons-digester-2.1.jar commons-io-2.5.jar jackson-
+ mapper-asl-1.9.13.jar scala-reflect-2.11.8.jar lucene-codecs-5.5.0.ja
+ r opencsv-2.3.jar neo4j-io-3.1.0.jar lucene-core-5.5.0.jar neo4j-cyph
+ er-compiler-3.0-3.0.7.jar concurrentlinkedhashmap-lru-1.4.2.jar jerse
+ y-servlet-1.19.jar neo4j-shell-3.1.0.jar parboiled-core-1.1.7.jar neo
+ 4j-cypher-frontend-3.0-3.0.7.jar neo4j-collections-3.1.0.jar netty-al
+ l-4.1.6.Final.jar commons-io-2.4.jar neo4j-security-3.1.0.jar jersey-
+ server-1.19.jar rhino-1.7R4.jar commons-beanutils-1.8.3.jar jetty-ser
+ vlet-9.2.9.v20150224.jar neo4j-primitive-collections-3.1.0.jar neo4j-
+ dbms-3.1.0.jar neo4j-graph-matching-3.1.0.jar commons-logging-1.1.1.j
+ ar code.jar caffeine-2.3.3.jar neo4j-common-3.1.0.jar jersey-core-1.1
+ 9.jar neo4j-kernel-3.1.0.jar neo4j-server-3.1.0.jar neo4j-logging-3.1
+ .0.jar scala-library-2.11.8.jar neo4j-browser-2.0.0-M10.jar jna-4.1.0
+ .jar la4j-0.6.0.jar objenesis-2.4.jar fst-2.47-onejar.jar Jeigen-onef
+ at.jar fst-2.47.jar jackson-core-2.5.3.jar javassist-3.19.0-GA.jar Ja
+ ma-1.0.3.jar commons-io-2.5.jar commons-io-2.5-javadoc.jar
+Main-Class: neo4jGraphIndexer.bidirectionalTraversal
+

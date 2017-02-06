@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact name="code:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/code_jar</output-path>
+    <root id="root">
+      <element id="archive" name="code.jar">
+        <element id="module-output" name="code" />
+      </element>
+      <element id="library" level="project" name="neo4j_lib" />
+      <element id="library" level="project" name="code" />
+      <element id="library" level="project" name="externalLibs" />
+      <element id="library" level="project" name="commons-io-2.5" />
+    </root>
+  </artifact>
+</component>
