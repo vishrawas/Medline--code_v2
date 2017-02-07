@@ -20,7 +20,7 @@ public class InvertedIndexCluster {
     helperClass helper = new helperClass();
 
     static HashMap<Integer,Set<String>>invertedIndexPrimary=null;
-    static HashMap<Integer,Set<String>>invertedIndexAll=null;
+
     String primaryInvertedPath ;
     String invertedPath ;
     public void inverted(String dirMedlineInputPath, String dirMeSHOutputPath,int topK) {
@@ -35,21 +35,15 @@ public class InvertedIndexCluster {
         try(Stream<Path> paths = Files.walk(Paths.get(dirMeSHOutputPath+ File.separator+"cluster"))) {
             paths.forEach(filePath -> {
                 invertedIndexPrimary  = new HashMap<>();
-                invertedIndexAll = new HashMap<>();
+
                 if (Files.isRegularFile(filePath)) {
                     System.out.println(filePath);
                     ArrayList<ArrayList<String>>fileContents = helper.readDelimiterSeparatedFile(filePath.toString(),",");
                     ArrayList<LinkedHashMap<Integer,Double>>topKClusters = extractTopKCluster(fileContents,topK,dirMeSHOutputPath);
 
                     for(Integer index:invertedIndexPrimary.keySet()){
-                        writeInvertedIndexCluster(index,invertedIndexPrimary.get(index),primaryInvertedPath);
+                        writeInvertedIndexCluster(index,invertedIndexPrimary.get(index),primaryInvertedPath,filePath.getFileName().toString());
                     }
-
-                    for(Integer index:invertedIndexAll.keySet()){
-                        writeInvertedIndexCluster(index,invertedIndexAll.get(index),invertedPath);
-                    }
-
-
                     writeTopKClusters(topKClusters,dirMeSHOutputPath,filePath.getFileName().toString());
                 }
             });
@@ -64,21 +58,22 @@ public class InvertedIndexCluster {
             helper.deleteIfExistsCreateNewFolder(dirMeSHOutputPath+File.separator+"TopKCluster"+File.separator+fileName);
 
             System.out.println("writing topK cluster to "+dirMeSHOutputPath+File.separator+"TopKCluster"+File.separator+fileName);
-            StringBuilder builder = new StringBuilder();
             int lineNumber = 1;
             for(LinkedHashMap<Integer,Double>vals:topKClusters){
-                 builder.setLength(0);
                 String meshTerm = indexMeshMap.get(lineNumber);
                 BufferedWriter bw = new BufferedWriter(new FileWriter(dirMeSHOutputPath+File.separator+"TopKCluster"+File.separator+fileName+File.separator+meshTerm,true));
-                for(Integer clusterId:vals.keySet()){
-                    builder.append(clusterId).append(" ");
+                String key = "";
+                String val = "";
+                for(Map.Entry<Integer, Double> entry : vals.entrySet()){
+                    key = key+" "+entry.getKey();
                 }
-                builder.append("\t");
-                for(Double prob:vals.values()){
-                    builder.append(prob).append(" ");
+                for(Map.Entry<Integer, Double> entry : vals.entrySet()){
+                    val = val+" "+entry.getValue();
                 }
-                builder.append("\n");
-                bw.write(builder.toString());
+                key=key+"\t"+val;
+                key=key.trim();
+                key=key+"\n";
+                bw.write(key);
                 bw.close();
                 lineNumber++;
             }
@@ -113,8 +108,7 @@ public class InvertedIndexCluster {
         int lineCounter = 1;
         for(ArrayList<String>line :fileContents){
             TreeMap<Double,LinkedHashSet<Integer>> lineDouble = discretizeBasedOnVal(line);
-           LinkedHashMap<Integer,Double> topKCluster = getTopK(lineDouble,topK,lineCounter,dirMeSHOutputPath);
-            topKClusters.add(topKCluster);
+           LinkedHashMap<Integer,Double> topKCluster = getTopKRev(lineDouble,topK,lineCounter,dirMeSHOutputPath);
             topKClusters.add(topKCluster);
             lineCounter++;
         }
@@ -123,87 +117,100 @@ public class InvertedIndexCluster {
     }
 
 
-
-    private LinkedHashMap<Integer,Double> getTopK(TreeMap<Double, LinkedHashSet<Integer>> lineDouble, int topK,int lineCounter,String dirMeSHOutputPath) {
+    private LinkedHashMap<Integer,Double> getTopKRev(TreeMap<Double,LinkedHashSet<Integer>>lineDouble,int topK, int lineCounter, String dirMeSHOutputPath){
         LinkedHashMap<Integer,Double> toReturn = new LinkedHashMap<>();
-        int counter =0;
 
-        double averageVal=0;
-        double totalVal= 0;
-        for(Double val:lineDouble.keySet()) {
-            if(counter>0) {
-                totalVal += val;
+        double cutoff = calculateCutOffAverage(lineDouble);
+        TreeMap<Double,LinkedHashSet<Integer>>topKSelected = filter(lineDouble,topK,cutoff);
+        Iterator iter = topKSelected.keySet().iterator();
+
+        int counter =0;
+        while(iter.hasNext()){
+            double val = (double) iter.next();
+            LinkedHashSet<Integer>clusterIds = topKSelected.get(val);
+            for(Integer clustId:clusterIds){
+                toReturn.put(clustId,val);
+                if(counter==0) {
+                    if (invertedIndexPrimary.containsKey(clustId)) {
+                        Set<String> meshterms = invertedIndexPrimary.get(clustId);
+                        meshterms.add(indexMeshMap.get(lineCounter));
+                        invertedIndexPrimary.put(clustId, meshterms);
+                    } else {
+                        Set<String> meshterms = new HashSet<>();
+                        meshterms.add(indexMeshMap.get(lineCounter));
+                        invertedIndexPrimary.put(clustId, meshterms);
+                    }
+                }
             }
             counter++;
         }
-        averageVal = totalVal/counter;
-        counter = 0;
-        for (Double val:lineDouble.keySet()){
-            if(counter==0)
-            {
-                Set<Integer>indices = lineDouble.get(val);
-                for(int index:indices){
-                    toReturn.put(index,val);
-                    if(invertedIndexPrimary.containsKey(index)){
-                        Set<String>meshterms = invertedIndexPrimary.get(index);
-                        meshterms.add(indexMeshMap.get(lineCounter));
-                        invertedIndexPrimary.put(index,meshterms);
-                    }
-                    else{
-                        Set<String>meshterms = new HashSet<>();
-                        meshterms.add(indexMeshMap.get(lineCounter));
-                        invertedIndexPrimary.put(index,meshterms);
-                    }
+        return toReturn;
+    }
 
-                    if(invertedIndexAll.containsKey(index)){
-                        Set<String>meshterms = invertedIndexAll.get(index);
-                        meshterms.add(indexMeshMap.get(lineCounter));
-                        invertedIndexAll.put(index,meshterms);
-                    }
-                    else{
-                        Set<String>meshterms = new HashSet<>();
-                        meshterms.add(indexMeshMap.get(lineCounter));
-                        invertedIndexAll.put(index,meshterms);
-                    }
-
-                }
-
-                counter++;
+    private TreeMap<Double,LinkedHashSet<Integer>> filter(TreeMap<Double, LinkedHashSet<Integer>> lineDouble, int topK, double cutoff) {
+        TreeMap<Double,LinkedHashSet<Integer>> toReturn = new TreeMap<>(Collections.reverseOrder());
+        Iterator iter = lineDouble.keySet().iterator();
+        int count = 0;
+        double prevVal  = 0;
+        int topKCounter = 0;
+        while (iter.hasNext()){
+            Double val = (Double) iter.next();
+            LinkedHashSet<Integer> clusterIds = lineDouble.get(val);
+            if(count==0){
+                toReturn.put(val,clusterIds);
+                topKCounter++;
             }
-            else{
-                if(val>averageVal&&counter<topK){
-                    Set<Integer>indices = lineDouble.get(val);
-                    for(int index:indices){
-                        toReturn.put(index,val);
-                        if(invertedIndexAll.containsKey(index)){
-                            Set<String>meshterms = invertedIndexAll.get(index);
-                            meshterms.add(indexMeshMap.get(lineCounter));
-                            invertedIndexAll.put(index,meshterms);
-                        }
-                        else{
-                            Set<String>meshterms = new HashSet<>();
-                            meshterms.add(indexMeshMap.get(lineCounter));
-                            invertedIndexAll.put(index,meshterms);
-                        }
-                    }
-                    counter++;
+            if(count>1){
+                if((prevVal-val)<cutoff&&topKCounter<topK){
+                    prevVal=val;
+                    toReturn.put(val,clusterIds);
+                    topKCounter++;
                 }
                 else{
                     break;
                 }
             }
+            if(count==1){
+                prevVal = val;
+                toReturn.put(val,clusterIds);
+                topKCounter++;
+            }
+            count++;
         }
         return toReturn;
     }
 
-    private void writeInvertedIndexCluster(int index, Set<String> meshTerms, String path) {
+    private double calculateCutOffAverage(TreeMap<Double, LinkedHashSet<Integer>> lineDouble) {
+        double cutoff=0;
+        Iterator iter = lineDouble.keySet().iterator();
+        int count = 0,diffCount = 0;
+        double prevVal = 0;
+        double diffCum = 0;
+        while(iter.hasNext()){
+            if(count>1){
+                double val = (double)iter.next();
+                diffCum = prevVal-val;
+                diffCount++;
+            }
+            if(count==1){
+                prevVal = (double) iter.next();
+            }
+            count++;
+        }
+        cutoff = diffCum/diffCount;
+        return cutoff;
+    }
+
+
+    private void writeInvertedIndexCluster(int index, Set<String> meshTerms, String path,String fileName) {
         try {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(path+File.separator+index,true));
+            File file = new File(path+File.separator+fileName);
+            if(!file.isDirectory()){
+                file.mkdir();
+            }
+        BufferedWriter bw = new BufferedWriter(new FileWriter(path+File.separator+fileName+File.separator+index,true));
         for(String meshTerm:meshTerms){
-
-
                 bw.append(meshTerm+"\n");
-
             }
         bw.close();
         } catch (IOException e) {

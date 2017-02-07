@@ -14,9 +14,9 @@ public class PostClusterDriver {
         PostClusterDriver driver = new PostClusterDriver();
         String dirMedlineInputPath = "/Users/super-machine/Documents/Research/medline/data/medline_raw_files";
         String dirMeSHOutputPath = "/Users/super-machine/Documents/Research/medline/output";
-//        driver.createInvertedIndex(dirMedlineInputPath,dirMeSHOutputPath);
-//        driver.createSemanticMapping(dirMedlineInputPath,dirMeSHOutputPath);
-//        driver.createInvertedIndexSemanticType(dirMedlineInputPath,dirMeSHOutputPath);
+        driver.createInvertedIndex(dirMedlineInputPath,dirMeSHOutputPath);
+        driver.createSemanticMapping(dirMedlineInputPath,dirMeSHOutputPath);
+        driver.createInvertedIndexSemanticType(dirMedlineInputPath,dirMeSHOutputPath);
         driver.createInvertedIndexSemanticAssociation(dirMedlineInputPath,dirMeSHOutputPath);
     }
 
