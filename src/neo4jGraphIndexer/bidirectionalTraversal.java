@@ -28,13 +28,12 @@ public class bidirectionalTraversal {
     static int oneSidedDepth = 0;
 
 
-    static Node startNode; //= getOrCreateNode(label, "fish oils", "D10.627.430", 1);
+    static Node startNode;
 
     static IndexManager index;
     static Index<Node> titleIdx;
     static Index<Node> meshIdx;
     static RelationshipIndex dateIdx;
-
 
 
     public bidirectionalTraversal(String dbPath, int year, int depthStart) {
@@ -57,19 +56,18 @@ public class bidirectionalTraversal {
     }
 
     public static void main(String args[]) {
-        String dbPath = args[0];
-        String writePath = args[1];
-//        String ipPath = "/Users/super-machine/Documents/Research/medline/output/traversal/path_length_4/ipTestCases.txt";
+        String dbPath = "/Users/super-machine/Documents/Research/medline/output/dummy.db";
+        String writePath = "/Users/super-machine/Documents/Research/medline/output/traversal/openDiscovery/";
+        String ipPath = "/Users/super-machine/Documents/Research/medline/output/traversal/openDiscovery/ipTestCases.txt";
         int year = 0;
-        int depthStart = 6;
+        int depthStart = 4;
+        System.out.println("starting--->");
 
-
-
-//        try {
-//            BufferedReader br = new BufferedReader(new FileReader(ipPath));
-            String line = "1985 fish oils   raynaud disease";
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(ipPath));
+            String line = "";
             int counter = 1;
-//            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null) {
 
                 Set<String> termSet1 = new HashSet<>();
                 Set<String> termSet2 = new HashSet<>();
@@ -87,79 +85,93 @@ public class bidirectionalTraversal {
                     for (String term : termsSplit2) {
                         termSet2.add(term.toLowerCase());
                     }
-//                }
 
-                bidirectionalTraversal traversal = new bidirectionalTraversal(dbPath, year, depthStart / 2);
-                long startTime = System.nanoTime();
-                for(String term1:termSet1) {
-                    traversal.uniDirectionalTraverser(term1, writePath + counter + "_A", year);
-                }
-                long endTime = System.nanoTime();
-                long duration = (endTime - startTime);
-                try {
-                    BufferedWriter bw = new BufferedWriter(new FileWriter(writePath+counter+"_A", true));
-                    bw.newLine();
-                    bw.write("Total Time taken: " + duration);
-                    bw.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                startTime = System.nanoTime();
-                for(String term2:termSet2) {
-                    traversal.uniDirectionalTraverser(term2, writePath + counter + "_A1", year);
-                }
-                endTime = System.nanoTime();
-                duration = (endTime - startTime);
-                try {
-                    BufferedWriter bw = new BufferedWriter(new FileWriter(writePath+counter+"_A1", true));
-                    bw.newLine();
-                    bw.write("Total Time taken: " + duration);
-                    bw.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-//                MergeUniDirectionTraversal merger = new MergeUniDirectionTraversal();
-//                merger.mergeDriver(writePath+counter+"_A", writePath+counter+"_A1", writePath+counter+"_merged");
+                    bidirectionalTraversal traversal = new bidirectionalTraversal(dbPath, year, depthStart/2);
+                    long startTime = System.nanoTime();
+                    for (String term1 : termSet1) {
+                        System.out.println("term1:"+term1);
+                        traversal.uniDirectionalTraverser(term1, writePath + counter + "_A", year);
+                    }
+                    long endTime = System.nanoTime();
+                    long duration = (endTime - startTime);
+                    try {
+                        BufferedWriter bw = new BufferedWriter(new FileWriter(writePath + counter + "_A", true));
+                        bw.newLine();
+                        bw.write("Total Time taken: " + duration);
+                        bw.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    startTime = System.nanoTime();
+                    for (String term2 : termSet2) {
+                        System.out.println("term2:"+term2);
+                        traversal.uniDirectionalTraverser(term2, writePath + counter + "_A1", year);
+                    }
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime);
+                    try {
+                        BufferedWriter bw = new BufferedWriter(new FileWriter(writePath + counter + "_A1", true));
+                        bw.newLine();
+                        bw.write("Total Time taken: " + duration);
+                        bw.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    MergeUniDirectionTraversal merger = new MergeUniDirectionTraversal();
+                    merger.mergeDriver(writePath + counter + "_A", writePath + counter + "_A1", writePath + counter + "_merged");
 
-                counter++;
-                graphDb.shutdown();
+                    counter++;
+                    graphDb.shutdown();
+                }
+                br.close();
             }
-//            br.close();
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void uniDirectionalTraverser(String term, String writePath,int year) {
-        System.out.println("Starting unidirectional traverser for " + term+"\t"+year);
+    private void uniDirectionalTraverser(String term, String writePath, int year) {
+        System.out.println("Starting unidirectional traverser for " + term + "\t" + year);
         try (Transaction tx = graphDb.beginTx()) {
             registerShutdownHook(graphDb);
             startNode = get(term, 2);
-            TraversalDescription description = graphDb.traversalDescription()
-                    .breadthFirst()
-                    .uniqueness(Uniqueness.NODE_PATH)
-                    .expand(new SpecificRelsPathExpander(year))
-                    .evaluator(Evaluators.toDepth(oneSidedDepth));
+            if(startNode!=null) {
+                System.out.println("term found:"+term+"\tdegree"+startNode.getDegree());
+                TraversalDescription description = graphDb.traversalDescription()
+                        .breadthFirst()
+                        .uniqueness(Uniqueness.NODE_PATH)
+                        .expand(new SpecificRelsPathExpander(year))
+                        .evaluator(Evaluators.toDepth(oneSidedDepth));
+//                        .evaluator(new pathEvaluator());
 
-            Traverser traverser = description.traverse(startNode);
-            ResourceIterator<Path> Paths = traverser.iterator();
-            BufferedWriter bw = null;
-            try {
-                bw = new BufferedWriter(new FileWriter(writePath, true));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            while (Paths.hasNext()) {
-                Path p = Paths.next();
-                bw.write(p.toString());
-                bw.newLine();
-            }
-            try {
-                bw.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+                Traverser traverser = description.traverse(startNode);
+                ResourceIterator<Path> Paths = traverser.iterator();
+                BufferedWriter bw = null;
+                try {
+                    bw = new BufferedWriter(new FileWriter(writePath, true));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if(Paths!=null) {
+                    try {
+                        while (Paths.hasNext()) {
+                            Path p = Paths.next();
+                            bw.write(p.toString());
+                            bw.newLine();
+                        }
+                    }catch(NullPointerException ex){
+                        System.out.println(ex.toString());
+                    }
+                }
+                try {
+                    bw.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                System.out.println("term not found "+term);
             }
             tx.success();
 
@@ -267,4 +279,22 @@ public class bidirectionalTraversal {
         }
     }
 
+
+    private class pathEvaluator implements Evaluator {
+        @Override
+        public Evaluation evaluate(Path path) {
+            if (path.endNode().hasLabel(Label.label("meshName"))) {
+                Node nd = path.endNode();
+                String mesh = nd.getProperty("meshName").toString();
+                if (mesh.equalsIgnoreCase("aged") || mesh.equalsIgnoreCase("temperature") || mesh.equalsIgnoreCase("animals") || mesh.equalsIgnoreCase("time factors") || mesh.equalsIgnoreCase("humans") || mesh.equalsIgnoreCase("adult") || mesh.equalsIgnoreCase("female") || mesh.equalsIgnoreCase("male")) {
+                    return Evaluation.EXCLUDE_AND_PRUNE;
+                } else {
+                    return Evaluation.INCLUDE_AND_CONTINUE;
+                }
+            } else {
+                return Evaluation.INCLUDE_AND_CONTINUE;
+            }
+
+        }
+    }
 }
