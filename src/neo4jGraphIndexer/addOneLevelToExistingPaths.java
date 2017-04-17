@@ -36,8 +36,8 @@ public class addOneLevelToExistingPaths {
 
     public static void main(String args[]) {
         DB_PATH = "/Users/super-machine/Documents/Research/medline/output/dummy.db";// args[0];
-        String writePath = "/Users/super-machine/Documents/Research/medline/output/traversal/path_length_6/nextLevel_fo.txt";
-        String ipPath = "/Users/super-machine/Documents/Research/medline/output/traversal/path_length_6/fo.txt";
+        String writePath = "/Users/super-machine/Documents/Research/medline/output/traversal/path_length_6/nextLevel_rd.txt";
+        String ipPath = "/Users/super-machine/Documents/Research/medline/output/traversal/path_length_4/1_A1";
         graphDb = new GraphDatabaseFactory().newEmbeddedDatabase(new File(DB_PATH));
         try (Transaction tx = graphDb.beginTx()) {
 
@@ -51,15 +51,16 @@ public class addOneLevelToExistingPaths {
 
             int year = 1985;
             System.out.println("Gathering all article nodes");
-            Set<Node> articleNodes = getLastArticleNode(ipPath);
-            System.out.println("Gathered all article Nodes");
+            Set<Node> meshNodes = getLastArticleNode(ipPath);
+            System.out.println("Gathered all article Nodes: "+meshNodes.size() );
             BufferedWriter bw = null;
             try {
                 bw = new BufferedWriter(new FileWriter(writePath, true));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            for (Node nd : articleNodes) {
+            for (Node nd : meshNodes) {
+                System.out.println("traversing node "+nd.getProperty("meshName"));
                 TraversalDescription description = graphDb.traversalDescription()
                         .breadthFirst()
                         .uniqueness(Uniqueness.NODE_PATH)
@@ -67,15 +68,22 @@ public class addOneLevelToExistingPaths {
                         .evaluator(Evaluators.toDepth(1));
                 Traverser traverser = description.traverse(nd);
                 ResourceIterator<Path> Paths = traverser.iterator();
-
-
                 StringBuilder builder = new StringBuilder();
+                int counter = 0;
                 while (Paths.hasNext()) {
                     Path p = Paths.next();
                     builder.append(p.toString()).append("\n");
-
+                    counter++;
+                    if (counter == 100000) {
+                        bw.write(builder.toString());
+                        bw.newLine();
+                        counter = 0;
+                        builder.setLength(0);
+                        builder.trimToSize();
+                    }
                 }
                 bw.write(builder.toString());
+                bw.newLine();
             }
             try {
                 bw.close();
@@ -101,8 +109,11 @@ public class addOneLevelToExistingPaths {
                         System.out.println("counter-- " + counter);
                     }
                     String article = getLastEntry(line);
+
                     if (article != null) {
-                        Node node = get(article, 1);
+                        System.out.println(article);
+                       Node node =  graphDb.getNodeById(Long.parseLong(article));
+//                        Node node = get(article, 2);
                         nodes.add(node);
                     }
                 }
@@ -115,7 +126,7 @@ public class addOneLevelToExistingPaths {
         return nodes;
     }
 
-    private static String getLastEntry(String s) {
+    public static String getLastEntry(String s) {
         String lastEntry = null;
         Matcher m = r.matcher(s);
         int counter = 0;
@@ -123,7 +134,7 @@ public class addOneLevelToExistingPaths {
             counter++;
             lastEntry = m.group(1);
         }
-        if (counter < 4) {
+        if (counter < 3) {
             return null;
         }
         return lastEntry;
