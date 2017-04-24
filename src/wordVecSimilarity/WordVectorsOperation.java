@@ -107,4 +107,18 @@ public class WordVectorsOperation {
         return score;
     }
 
+    public double getSimilaritySet(String[] temp, String[] term1Splits, String term1, String ogTerm1, int targetYear, int targetYear0) {
+       double total = 0;
+       int counter = 0;
+       for(String t:temp)
+       {
+           for(String t1:term1Splits){
+               double score = getSimilarity(t.toLowerCase(), t1.toLowerCase(), targetYear, targetYear0);
+               counter++;
+               total=total+score;
+           }
+       }
+       return total/counter;
+    }
+
 }

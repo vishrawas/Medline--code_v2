@@ -62,5 +62,5 @@ Class-Path: neo4j-security-3.1.0.jar commons-compress-1.12.jar neo4j-c
  .jar la4j-0.6.0.jar objenesis-2.4.jar fst-2.47-onejar.jar Jeigen-onef
  at.jar fst-2.47.jar jackson-core-2.5.3.jar javassist-3.19.0-GA.jar Ja
  ma-1.0.3.jar commons-io-2.5.jar commons-io-2.5-javadoc.jar
-Main-Class: neo4jGraphIndexer.extractMeSHTermsFromUni
+Main-Class: post_cluster_oper.PostClusterDriver
 

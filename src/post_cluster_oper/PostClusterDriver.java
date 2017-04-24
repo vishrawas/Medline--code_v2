@@ -13,8 +13,8 @@ public class PostClusterDriver {
     public static void main(String args[]){
         PostClusterDriver driver = new PostClusterDriver();
         String dirMedlineInputPath = "/Users/super-machine/Documents/Research/medline/data/medline_raw_files";
-        String dirMeSHOutputPath = "/Users/super-machine/Documents/Research/medline/output";
-        driver.createInvertedIndex(dirMedlineInputPath,dirMeSHOutputPath);
+        String dirMeSHOutputPath = "/home/super-machine/Documents/mydrive/myResearch/output";
+//        driver.createInvertedIndex(dirMedlineInputPath,dirMeSHOutputPath);
         driver.createSemanticMapping(dirMedlineInputPath,dirMeSHOutputPath);
         driver.createInvertedIndexSemanticType(dirMedlineInputPath,dirMeSHOutputPath);
         driver.createInvertedIndexSemanticAssociation(dirMedlineInputPath,dirMeSHOutputPath);
@@ -23,7 +23,7 @@ public class PostClusterDriver {
     private void createInvertedIndexSemanticAssociation(String dirMedlineInputPath, String dirMeSHOutputPath) {
         try {
             helperClass helper = new helperClass();
-            BufferedReader br = new BufferedReader(new FileReader("/Users/super-machine/Documents/Research/medline/output/semanticNetworkFile.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(dirMeSHOutputPath+File.separator+"semanticNetworkFile.txt"));
             helper.deleteIfExistsCreateNewFolder(dirMeSHOutputPath+File.separator+"invertedSemanticAssociation");
             String line = "";
             while((line=br.readLine())!=null){

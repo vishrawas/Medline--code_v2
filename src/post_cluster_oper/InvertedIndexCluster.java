@@ -189,7 +189,8 @@ public class InvertedIndexCluster {
         while(iter.hasNext()){
             if(count>1){
                 double val = (double)iter.next();
-                diffCum = prevVal-val;
+                diffCum += prevVal-val;
+                prevVal = val;
                 diffCount++;
             }
             if(count==1){
