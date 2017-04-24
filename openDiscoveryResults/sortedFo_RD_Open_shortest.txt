@@ -1,0 +1,202 @@
+1.542014178236673	raynaud disease	epoprostenol	autacoids
+1.5374409474329664	raynaud disease	epoprostenol	prostaglandins h
+1.5309542622020869	raynaud disease	blood coagulation tests	factor vii
+1.5152691578518476	raynaud disease	diabetic angiopathies	hemoglobin a, glycosylated
+1.5135603965410107	raynaud disease	mestranol	norethynodrel
+1.5089644277443672	raynaud disease	prostaglandin endoperoxides	prostaglandins g
+1.503498978044445	raynaud disease	mestranol	ethynodiol diacetate
+1.5011647337601146	raynaud disease	factor viii	factor ix
+1.5006427222070156	raynaud disease	epoprostenol	prostanoic acids
+1.4994943164382473	raynaud disease	factor xii	prekallikrein
+1.4967895195128322	raynaud disease	factor xii	factor xi
+1.494865886860972	raynaud disease	beta-thromboglobulin	platelet factor 3
+1.4924935528408148	raynaud disease	hyperlipoproteinemia type iv	lipoproteins, vldl
+1.4889310783055405	raynaud disease	angiotensin ii	angiotensins
+1.4826885266661871	raynaud disease	hyperlipoproteinemia type iv	valerates
+1.4815038853448441	raynaud disease	hyperlipoproteinemia type iv	lipoproteins, hdl
+1.4797375263171295	raynaud disease	vasomotor system	chloralose
+1.476945050681291	raynaud disease	hyperlipoproteinemia type iv	cholesterol, vldl
+1.476836980044401	raynaud disease	piribedil	dopamine antagonists
+1.4747061125241565	raynaud disease	lipoproteins	lipoproteins, ldl
+1.4733062965177233	raynaud disease	fibrinopeptide a	fibrinopeptide b
+1.4728473608613863	raynaud disease	intramolecular oxidoreductases	lipocalins
+1.4713861396445314	raynaud disease	fludrocortisone	mineralocorticoids
+1.4682114491374216	raynaud disease	thromboxane-a synthase	12-hydroxy-5,8,10,14-eicosatetraenoic acid
+1.4673965907134696	raynaud disease	hyperlipoproteinemia type iv	apolipoproteins b
+1.4661002255166584	raynaud disease	thromboxane-a synthase	leukotrienes
+1.4656232232864916	raynaud disease	hyperlipoproteinemia type iv	cholesterol, hdl
+1.462344953102293	raynaud disease	thromboxane a2	eicosapentaenoic acid
+1.4609578039257372	raynaud disease	hyperlipidemias	chylomicrons
+1.4605408521995078	raynaud disease	blood coagulation factors	blood coagulation factor inhibitors
+1.4605322586725111	raynaud disease	hyperlipoproteinemia type iv	apolipoproteins a
+1.4589546103204665	raynaud disease	nitroglycerin	erythrityl tetranitrate
+1.4581311827413168	raynaud disease	prostaglandin endoperoxides	8,11,14-eicosatrienoic acid
+1.4562401775426765	raynaud disease	angiotensin ii	angiotensinogen
+1.4557791408101326	raynaud disease	thromboangiitis obliterans	actihaemyl
+1.4546747970761866	raynaud disease	thromboxane-a synthase	5,8,11,14-eicosatetraynoic acid
+1.4513548960974267	raynaud disease	factor xii	kininogens
+1.4502823110189667	raynaud disease	thromboxane a2	eicosanoic acids
+1.4495420292326968	raynaud disease	hyperlipoproteinemia type iv	lipoproteins, idl
+1.4484990795561057	raynaud disease	venous insufficiency	escin
+1.4484385288909147	raynaud disease	arteriosclerosis obliterans	pentosan sulfuric polyester
+1.4460183935109323	raynaud disease	epoprostenol	platelet activating factor
+1.4458381673004144	raynaud disease	piribedil	levodopa
+1.4448513739418924	raynaud disease	tyramine	octopamine
+1.4372414159637126	raynaud disease	fibrinolysis	serpins
+1.432721663340571	raynaud disease	thrombophlebitis	heparin, low-molecular-weight
+1.4323047935332358	raynaud disease	neurodermatitis	steroids, fluorinated
+1.4274270373359834	raynaud disease	hydroxyindoleacetic acid	methoxyhydroxyphenylglycol
+1.425945444205603	raynaud disease	ergoloid mesylates	dihydroergocornine
+1.423430506729259	raynaud disease	arteritis	rna, untranslated
+1.4230444680382774	raynaud disease	stanozolol	methandrostenolone
+1.4211800271588795	raynaud disease	neurodermatitis	pregnadienes
+1.4207902838698736	raynaud disease	stanozolol	oxymetholone
+1.4185374091183833	raynaud disease	leg ulcer	lanolin
+1.4156601852187007	raynaud disease	lipoproteins	cholesterol esters
+1.414215391904502	raynaud disease	fibrin fibrinogen degradation products	acute-phase proteins
+1.4125302698955644	raynaud disease	vasomotor system	kinins
+1.4112806258208936	raynaud disease	venous insufficiency	hesperidin
+1.4097325403617922	raynaud disease	vasomotor system	fatty acids, monounsaturated
+1.4087414664616147	raynaud disease	gamma-linolenic acid	docosahexaenoic acids
+1.4073567366843849	raynaud disease	angiotensin ii	atrial natriuretic factor
+1.4043249228791286	raynaud disease	nitroglycerin	isosorbide
+1.402647046494441	raynaud disease	arteriosclerosis obliterans	fish oils
+1.402621247065258	raynaud disease	parathyroidectomy	ergocalciferols
+1.4024580117549483	raynaud disease	mestranol	estrogens, conjugated (usp)
+1.4022700061021633	raynaud disease	renin-angiotensin system	natriuretic agents
+1.3994940430791445	raynaud disease	fatty acids, essential	safflower oil
+1.3983289366947567	raynaud disease	stanozolol	methenolone
+1.3982279861246036	raynaud disease	stellate ganglion	veratrine
+1.3951157771584146	raynaud disease	ergoloid mesylates	cardiac glycosides
+1.3946174754684943	raynaud disease	arteriosclerosis obliterans	apolipoprotein e3
+1.3926098803354487	raynaud disease	thromboangiitis obliterans	pancreatic extracts
+1.3912825477249173	raynaud disease	platelet factor 4	thrombospondins
+1.3896598644718026	raynaud disease	thromboangiitis obliterans	streptolysins
+1.3891976697541415	raynaud disease	arteritis	amyloid
+1.3868581103746185	raynaud disease	leg ulcer	soaps
+1.3859516130172103	raynaud disease	arteriosclerosis obliterans	apolipoprotein e2
+1.3848911275348557	raynaud disease	thromboangiitis obliterans	placental extracts
+1.3838845394927035	raynaud disease	vascular diseases	biopolymers
+1.3828146479332848	raynaud disease	arteritis	gold
+1.380625320895489	raynaud disease	ischemia	hydroxyethyl starch derivatives
+1.3790630357769995	raynaud disease	stanozolol	testosterone congeners
+1.3786313550864528	raynaud disease	ethylestrenol	nandrolone
+1.378474322598282	raynaud disease	vascular diseases	desmosine
+1.3774879498306567	raynaud disease	prostaglandins f	carboprost
+1.3774277264251347	raynaud disease	arteriosclerosis obliterans	protamines
+1.3764001684601184	raynaud disease	arterial occlusive diseases	meglumine
+1.3758881634694942	raynaud disease	arteritis	cerebrospinal fluid proteins
+1.3729213258573951	raynaud disease	vasomotor system	neuropeptide y
+1.3691103052286615	raynaud disease	eczema	halcinonide
+1.3676614790608799	raynaud disease	endothelium	fibronectins
+1.3661393630213101	raynaud disease	vascular diseases	scleroproteins
+1.365291082847514	raynaud disease	vasodilation	adenosine
+1.363666059364209	raynaud disease	dietary fats	butter
+1.3630403498259773	raynaud disease	xanthinol niacinate	cytidine diphosphate choline
+1.362207812618552	raynaud disease	ganglia, autonomic	nerve growth factors
+1.361763371456154	raynaud disease	arteritis	alpha-globulins
+1.3615109550099893	raynaud disease	ergoloid mesylates	belladonna alkaloids
+1.3601873257961932	raynaud disease	thromboangiitis obliterans	alpha 1-antitrypsin
+1.3560921605570777	raynaud disease	vascular diseases	mucoproteins
+1.3556601348213952	raynaud disease	dihydroergotamine	2-hydroxyphenethylamine
+1.3554349209079128	raynaud disease	vasodilation	s-nitrosothiols
+1.3527358655309842	raynaud disease	vascular diseases	pyrrolizidine alkaloids
+1.3514742044068342	raynaud disease	thromboangiitis obliterans	carboxyhemoglobin
+1.3498546777919995	raynaud disease	intermittent claudication	tartrates
+1.3488405142793434	raynaud disease	vascular diseases	oils, volatile
+1.345733868682678	raynaud disease	thromboangiitis obliterans	hyaluronic acid
+1.345720723698292	raynaud disease	sympatholytics	serotonin agents
+1.3444652755984663	raynaud disease	lipoproteins	lipoprotein(a)
+1.343882662259562	raynaud disease	ethylestrenol	methandriol
+1.3416438645386646	raynaud disease	skin manifestations	hemosiderin
+1.3392341444280702	raynaud disease	acrodermatitis	zinc sulfate
+1.339092280790257	raynaud disease	lipoproteins	apolipoprotein e4
+1.3387106860607532	raynaud disease	vascular diseases	hydroxylysine
+1.3372457206221013	raynaud disease	vascular diseases	hemopexin
+1.3356418376204604	raynaud disease	menstruation	gestrinone
+1.3328070984784153	raynaud disease	vascular diseases	thyroxine-binding proteins
+1.3319070452476036	raynaud disease	diabetic angiopathies	hemoglobin c
+1.329958088670051	raynaud disease	erythema	furocoumarins
+1.3287477789881295	raynaud disease	vascular diseases	toxins, biological
+1.3277682634485641	raynaud disease	vascular diseases	furaldehyde
+1.3249576008706834	raynaud disease	endothelium	endothelial growth factors
+1.3218481407832168	raynaud disease	vascular diseases	seed storage proteins
+1.3184514942282906	raynaud disease	arteriosclerosis obliterans	xanthine
+1.3181824028780016	raynaud disease	vascular diseases	pyrogens
+1.3180502911994383	raynaud disease	leg ulcer	ankyrins
+1.3169053180527488	raynaud disease	vascular diseases	cytoskeletal proteins
+1.3167293872031358	raynaud disease	intermittent claudication	nitric oxide
+1.3166735337784607	raynaud disease	vascular diseases	4-aminobenzoic acid
+1.31559616962985	raynaud disease	vascular diseases	chromium
+1.3147931885991433	raynaud disease	vascular diseases	anaphylatoxins
+1.3087672565601356	raynaud disease	diabetes mellitus, type 1	fructosamine
+1.3056270249942998	raynaud disease	phospholipids	cardiolipins
+1.3030161701844047	raynaud disease	leg ulcer	nickel
+1.3020798302258139	raynaud disease	diabetic angiopathies	urobilin
+1.3010066159273732	raynaud disease	vasomotor system	calcitonin gene-related peptide
+1.30067058144148	raynaud disease	skin manifestations	kynurenine
+1.3004876768390947	raynaud disease	alprostadil	phosphatidylinositol 4,5-diphosphate
+1.299291983188372	raynaud disease	vasoconstriction	calcium channels
+1.2973801514401284	raynaud disease	ischemia	gluconates
+1.2945442034715975	raynaud disease	chlormadinone acetate	gonanes
+1.290805065624779	raynaud disease	ischemia	rna, ribosomal
+1.28505256824457	raynaud disease	ischemia	pantetheine
+1.2836415243739943	raynaud disease	menstruation	abortifacient agents, steroidal
+1.2784702462865933	raynaud disease	ischemia	uridine monophosphate
+1.2758299543815392	raynaud disease	platelet adhesiveness	thrombopoietin
+1.2749570881805727	raynaud disease	menstruation	mifepristone
+1.2695910902640322	raynaud disease	ischemia	egg proteins
+1.2673949571179124	raynaud disease	stanozolol	clodronic acid
+1.266954400438499	raynaud disease	chilblains	retinoids
+1.2650194959131296	raynaud disease	ischemia	sialoglycoproteins
+1.2644336639113944	raynaud disease	alprostadil	adenosine diphosphate ribose
+1.2618435618444344	raynaud disease	lupus erythematosus, discoid	short interspersed nucleotide elements
+1.2601619249823122	raynaud disease	diabetic angiopathies	thyroglobulin
+1.2563991224531512	raynaud disease	leg	ecdysone
+1.24472012619883	raynaud disease	stanozolol	mesterolone
+1.2428940770828918	raynaud disease	arteries	rna-binding proteins
+1.2388748463371435	raynaud disease	thrombophlebitis	estramustine
+1.2264975070284456	raynaud disease	endothelium	lectins, c-type
+1.2259914341604512	raynaud disease	platelet aggregation	p-selectin
+1.2246442142231602	raynaud disease	dihydroergotamine	salivary proteins and peptides
+1.2193623619483256	raynaud disease	alprostadil	cyclic amp receptor protein
+1.2120112657969753	raynaud disease	fibrinogen	vascular endothelial growth factors
+1.211094661848494	raynaud disease	ultraviolet rays	n-glycosyl hydrolases
+1.2020951573297884	raynaud disease	middle aged	molecular chaperones
+1.2013441929938806	raynaud disease	chemoreceptor cells	pheromones
+1.1992172786725552	raynaud disease	middle aged	deae-dextran
+1.1987005608053747	raynaud disease	middle aged	deoxyribonucleoproteins
+1.1975718579575274	raynaud disease	male	androgen-binding protein
+1.1960895992377174	raynaud disease	middle aged	pulmonary surfactant-associated proteins
+1.1943184599388106	raynaud disease	middle aged	ribosomal proteins
+1.192643411812583	raynaud disease	thrombosis	n-acetylneuraminic acid
+1.1911506040349846	raynaud disease	thrombosis	rna, double-stranded
+1.1904685021551313	raynaud disease	middle aged	p-glycoprotein
+1.180160080463828	raynaud disease	middle aged	nucleosomes
+1.180080416691697	raynaud disease	middle aged	heterogeneous-nuclear ribonucleoprotein group a-b
+1.1713657528095194	raynaud disease	alprostadil	cytidine triphosphate
+1.1710143785969	raynaud disease	heparin	fibroblast growth factor 1
+1.1694577101786074	raynaud disease	middle aged	formiminoglutamic acid
+1.1691695978333452	raynaud disease	sympathetic nervous system	microtubule-associated proteins
+1.1681717196958	raynaud disease	middle aged	poly adenosine diphosphate ribose
+1.1672146099137413	raynaud disease	middle aged	phycoerythrin
+1.166394428776428	raynaud disease	middle aged	alpha-2-hs-glycoprotein
+1.1661296095838423	raynaud disease	acne vulgaris	lysosome-associated membrane glycoproteins
+1.151989889664781	raynaud disease	middle aged	dna, satellite
+1.1372542934678065	raynaud disease	prostaglandins	dermotoxins
+1.134557965111455	raynaud disease	eczema	lipopeptides
+1.1305653775557278	raynaud disease	fibrinogen	phycocyanin
+1.1292614107796748	raynaud disease	adult	dna, ribosomal
+1.1253055697111716	raynaud disease	adult	nucleoside transport proteins
+1.1206275870180522	raynaud disease	ultraviolet rays	rna, heterogeneous nuclear
+1.1197899096096684	raynaud disease	male	guanosine pentaphosphate
+1.1122174028442768	raynaud disease	lipoproteins	ecdysterone
+1.108563628084473	raynaud disease	male	annexin a6
+1.1043844591787135	raynaud disease	ultraviolet rays	terminator regions, genetic
+1.1018066029414113	raynaud disease	male	rna, transfer, met
+1.1004013715599323	raynaud disease	ultraviolet rays	rna caps
+1.0991585494151495	raynaud disease	male	antifreeze proteins
+1.0954000510229205	raynaud disease	male	attachment sites, microbiological
+1.085306674529435	raynaud disease	aprotinin	galectin 4
+1.045770271907581	raynaud disease	ultraviolet rays	viral nonstructural proteins
+0.9442206320818272	raynaud disease	time factors	imino furanoses
