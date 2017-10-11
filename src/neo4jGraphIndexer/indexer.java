@@ -41,10 +41,10 @@ public class indexer {
 
     public static void main(String[] args) {
 
-        String filePath = "/Users/super-machine/Documents/Research/medline/output/whole.txt";//args[0];
-        DB_PATH = "/Users/super-machine/Documents/Research/medline/output/dummy.db/";//args[1];
+        String filePath = args[0];
+        DB_PATH = args[1];
         int commitBatchSize = 100000;// Integer.parseInt(args[2]);
-     //   deleteFileOrDirectory(new File(DB_PATH));
+        deleteFileOrDirectory(new File(DB_PATH));
         int batchNumber = 1;
         graphDb = new GraphDatabaseFactory().newEmbeddedDatabase(new File(DB_PATH));
         registerShutdownHook(graphDb);

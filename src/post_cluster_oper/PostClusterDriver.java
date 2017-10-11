@@ -12,9 +12,9 @@ public class PostClusterDriver {
     static int topK = 5;
     public static void main(String args[]){
         PostClusterDriver driver = new PostClusterDriver();
-        String dirMedlineInputPath = "/Users/super-machine/Documents/Research/medline/data/medline_raw_files";
-        String dirMeSHOutputPath = "/home/super-machine/Documents/mydrive/myResearch/output";
-//        driver.createInvertedIndex(dirMedlineInputPath,dirMeSHOutputPath);
+        String dirMedlineInputPath = args[0];
+        String dirMeSHOutputPath = args[1];
+        driver.createInvertedIndex(dirMedlineInputPath,dirMeSHOutputPath);
         driver.createSemanticMapping(dirMedlineInputPath,dirMeSHOutputPath);
         driver.createInvertedIndexSemanticType(dirMedlineInputPath,dirMeSHOutputPath);
         driver.createInvertedIndexSemanticAssociation(dirMedlineInputPath,dirMeSHOutputPath);

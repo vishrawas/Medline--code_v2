@@ -16,8 +16,8 @@ import org.apache.commons.io.FilenameUtils;
 public class Driver {
     public static void main(String args[])
     {
-        String dirMedlineInputPath = "/Users/super-machine/Documents/Research/medline/data/medline_raw_files";
-        String dirMeSHOutputPath = "/Users/super-machine/Documents/Research/medline/output";
+        String dirMedlineInputPath = args[0];
+        String dirMeSHOutputPath = args[1];
         Driver driver = new Driver();
         while(true) {
             String startPointLine = driver.determineStartPoint(dirMeSHOutputPath + File.separator + "log.log");

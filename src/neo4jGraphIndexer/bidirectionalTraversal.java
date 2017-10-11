@@ -133,50 +133,6 @@ public class bidirectionalTraversal {
         }
     }
 
-
-//    private void bidirectionalTraverser(String term1,String term2) {
-//        try (Transaction tx = graphDb.beginTx()) {
-//            registerShutdownHook(graphDb);
-//
-//            long startTime = System.nanoTime();
-//            startNode = get(term1, 2);
-//            endNode = get(term2, 2);
-//            BidirectionalTraversalDescription description = graphDb.bidirectionalTraversalDescription().startSide(graphDb.traversalDescription()
-//                    .breadthFirst()
-//                    .uniqueness(Uniqueness.NODE_PATH)
-//                    .expand(new SpecificRelsPathExpander(year))
-//                    .evaluator(Evaluators.toDepth(oneSidedDepth))).endSide(graphDb.traversalDescription()
-//                    .breadthFirst()
-//                    .uniqueness(Uniqueness.NODE_PATH)
-//                    .expand(new SpecificRelsPathExpander(year)).evaluator(Evaluators.toDepth(oneSidedDepth)))
-//                    .collisionEvaluator(new Evaluator() {
-//                        @Override
-//                        public Evaluation evaluate(Path path) {
-//                            return Evaluation.INCLUDE_AND_CONTINUE;
-//                        }
-//                    }).sideSelector(SideSelectorPolicies.LEVEL, 1000);
-//            Traverser traverser = description.traverse(startNode, endNode);
-//            ResourceIterator<Path> Paths = traverser.iterator();
-//
-//            while (Paths.hasNext()) {
-//                Path p = Paths.next();
-//                writePaths(p, bw);
-//            }
-//            long endTime = System.nanoTime();
-//
-//            long duration = (endTime - startTime);
-//            try {
-//                bw.newLine();
-//                bw.append("Time Taken: "+duration);
-//                bw.newLine();
-//                bw.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
-//    }
-
     private static Node get(String nodeName,   int type) {
         Node nd = null;
         nodeName=nodeName.toLowerCase().trim();
